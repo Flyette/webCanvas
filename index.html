@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Display Webcam Stream</title>
+ 
+<style>
+#container {
+    margin: 0px auto;
+    width: 500px;
+    height: 375px;
+    border: 10px #333 solid;
+}
+#videoElement {
+    position: absolute;
+    width: 500px;
+    height: 375px;
+    background-color: #666;
+    z-index: 1;
+}
+#canvas {
+    width: 500px;
+    height: 375px;
+   
+    background-color: #CCC;
+}
+#eur {
+    position: absolute;
+    z-index:3;
+}
+#comedia{
+    position: absolute;
+    z-index: 2
+}
+.hide {
+    display: none;
+}
+</style>
+
+</head>
+ 
+<body>
+<!-- On iOS 6 we can use the file select input with the following attributes to capture an image from the camera -->
+<input id="fileselect" type="file" accept="image/*" capture="camera">
+
+<!-- For devices that support getUserMedia and have a webcam we can display the feed in a video element -->
+<div id="container">
+    <video autoplay id="videoElement">
+     
+    </video>
+    <!--canvas transparent pour heure-->
+    <canvas id="eur" width="500" height="375"></canvas>
+    <canvas id="comedia" width="500" height="375" class="hide"></canvas>
+</div>
+
+<!-- Selected image will be draw to a canvas -->
+
+<!-- <canvas id="canvas" width="500" height="375"></canvas>
+ --><!-- Used to capture frame from webcam video feed -->
+<input type="button" value="Save" id="save" />
+<input type="button" value="content" id="content" />
+<input type="button" value="mechant" id="mechant" />
+
+<!-- Or alternatively added to an img tag -->
+<!-- <img id="imgtag" src="" width="500" height="375" alt="capture" /> -->
+
+<!-- For the JavaScript below -->
+<script type="text/javascript" src="bundle.js"></script>
+
+</body>
+</html>
